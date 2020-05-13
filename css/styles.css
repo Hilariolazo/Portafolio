@@ -1,0 +1,545 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+/* Home */
+
+*
+{margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ scroll-behavior: smooth;
+	font-family: 'Poppins', sans-serif;
+	/* overflow: hidden; */
+}
+
+header
+{
+ padding-left: 20px;
+ padding-right: 20px;
+ position: relative;
+ width: 100%;
+ height: 100%;
+ padding: 0 10px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ background: #111;
+ z-index: 1000;
+
+ /* Estas dos propiedades sirven para hacer el menu pegajoso  */
+ position: sticky;
+ top: 0;
+}
+
+header .logo
+{
+	/* margin-left: -100px; */
+ margin: 10px;
+ color: #fff;
+ font-size: 30px;
+ text-decoration: none;
+ letter-spacing: 2px;
+ font-weight: 700;
+}
+
+header ul 
+{
+ position: relative;
+ display: flex;
+}
+
+header ul li 
+{
+ position: relative;
+ list-style: none;
+}
+
+header ul li a 
+{
+ position: relative;
+ padding: 5px 10px;
+ color: #fff;
+ display: inline-block;
+ text-decoration: none;
+ cursor: pointer;
+}
+
+header ul li a.active,
+header ul li a:hover
+{
+ background: #9c0016;
+}
+
+.toggle 
+{
+ display: none;
+}
+
+.section-home{
+	position: relative;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ min-height: 100vh;
+ padding: 150px 100px 100px;
+}
+
+section
+{
+ position: relative;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ min-height: 100vh;
+ /* padding: 150px 100px 100px; */
+}
+
+section img
+{
+ max-width: 350px;
+ /* margin-left: 30px; */
+}
+
+section h2
+{
+	font-size: 2.5em;
+ text-transform: uppercase;
+}
+
+section p
+{
+ font-size: 18px;
+}
+
+section a:hover
+{
+ color: #000;
+ background: transparent;
+ border: 1px solid black;
+}
+
+section a 
+{
+ display: inline-block;
+ padding: 8px 10px;
+ text-decoration: none;
+ font-size: 18px;
+ color: #fff;
+ background: #111;
+ margin-top: 20px;
+}
+
+section:nth-child(odd)
+{
+ position: relative;
+ justify-content: center;
+ align-items: center;
+ background: #111;
+ color: #fff;
+}
+
+section:nth-child(odd) a:hover
+{
+ color: #fff;
+ background: transparent;
+ border: 1px solid #fff;
+}
+
+.menu-fixed {
+	position:fixed;
+	z-index:1000;
+	top:0;
+	max-width:1000px;
+	width:100%;
+	box-shadow:0px 4px 3px rgba(0,0,0,.5);
+}
+
+/* knowledge */
+
+body
+{
+ /* display: flex; */
+ justify-content: center;
+ align-items: center;
+ /* min-height: 100vh; */
+ /* background: #101010; */
+}
+
+.container
+{
+ position: relative;
+ width: 900px;
+ display: flex;
+ justify-content: space-around;
+}
+
+.container .card
+{
+ position: relative;
+ width: 250px;
+ background: linear-gradient(0deg, #1b1b1b,#222,#1b1b1b);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 300px;
+ border-radius: 4px;
+ text-align: center;
+ overflow: hidden;
+ transition: 0.5s;
+}
+
+.container .card
+{
+ transform: translateY(-10px);
+ box-shadow: 0 15px 35px rgba(0, 0, 0, .5);
+}
+
+.container .card::before
+{
+ content: '';
+ position: absolute;
+ top: 0;
+ left: -50%;
+ width: 100%;
+ height: 100%;
+ background: rgba(255, 255, 255,.03);
+ pointer-events: none;
+ z-index: 1;
+}
+
+.percent
+{
+ position: relative;
+ width: 150px;
+ height: 150px;
+ border-radius: 50%;
+ box-shadow: inset 0 0 50px #000;
+ background: #222;
+ z-index: 1000;
+}
+
+.percent .number 
+{
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border-radius: 50%;
+}
+
+.percent .number h2
+{
+ color: #777;
+ /* font-weight: 700; */
+ font-size: 40px;
+ transition: 0.5s;
+}
+
+svg{
+ position: relative;
+ width: 150px;
+ height: 150px;
+ z-index: 1000;
+}
+
+.card:hover .percent .number h2
+{
+ color: #fff;
+ font-size: 60px;
+} 
+
+.percent .number h2 span
+{
+ font-size: 24px;
+ color: #777;
+ transition: 0.5s;
+}
+
+.card:hover .percent .number  h2 span
+{
+ color: #fff;
+}
+
+.text
+{
+ position: relative;
+ color: #777;
+ margin-top: 20px;
+ font-weight: 700;
+ font-size: 18px;
+ letter-spacing: 1px;
+ text-transform: uppercase;
+ transition: 0.5s;
+}
+
+.card:hover .text
+{
+ color: #fff;
+}
+
+svg circle{
+ width: 100%;
+ height: 100%;
+ fill: none;
+ stroke: #191919;
+ stroke-width: 10;
+ stroke-linecap: round;
+ transform: translate(5px,5px);
+}
+
+svg circle:nth-child(2)
+{
+ stroke-dasharray: 440;
+ stroke-dashoffset: 440;
+}
+
+.card:nth-child(1) svg circle:nth-child(2)
+{
+ stroke-dashoffset: calc(440 - (440 * 90) / 100);
+ stroke: darkorange;
+}
+
+.card:nth-child(2) svg circle:nth-child(2)
+{
+ stroke-dashoffset: calc(440 - (440 * 85) / 100);
+ stroke: #00a1ff;
+}
+
+.card:nth-child(3) svg circle:nth-child(2)
+{
+ stroke-dashoffset: calc(440 - (440 * 25) / 100);
+ stroke: yellow;
+}
+
+/* Service */
+
+body{
+ display: grid;
+ justify-content: center;
+ align-items: center;
+ min-height: 100vh;
+ background: #fff;
+}
+
+.container2{ 
+	overflow: hidden;
+ /* margin-top: 20px;
+ margin-bottom: 20px; */
+ width: 1100px;
+ display: flex;
+ grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+ margin: 0 auto;
+}
+
+.container2 .card{
+ position: relative;
+ width: 300px;
+ height: 400px;
+ margin: 0 auto;
+ background: #000;
+ transition: 0.5s;
+}
+
+.container2 .card:hover {
+ box-shadow: 0 30px 50px rgba(0, 0, 0, .2);
+}
+
+.container2 .card .face {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.container2 .card .face.face1{
+ box-sizing: border-box;
+ padding: 20px;
+ text-align: center;
+ background: #000;
+ color: #fff;
+}
+
+.container2 .card .face.face1 .h2de3{
+ margin-top: 70px;
+}
+
+.container2 .card .face.face1 .read-more{
+ display: inline-block;
+ padding: 5px 10px;
+ margin-top: 20px;
+ text-decoration: none;
+ color: #fff;
+ border: 2px solid #fff;
+}
+
+.container2 .card .face.face1 .read-more:hover{
+ background: #fff;
+ color: #000;
+}
+
+.container2 .card .face.face2 {
+ background: #fff;
+ transition: 0.5s;
+}
+
+.container2 .card:hover .face.face2{
+ height: 80px;
+ width: 80px;
+ border-radius: 50%;
+ top: 40px;
+ left: 50%;
+ transform: translateX(-50%);
+ background: transparent;
+ border: 2px solid #fff;
+}
+
+.container2 .card .face.face2 .img2{
+ width: 250px;
+ height: 250px;
+}
+
+.container2 .card .face.face2 .h2de3{
+ margin: 0;
+ padding: 0;
+ font-size: 10em;
+ color: #000;
+ transition: 0.5s;
+}
+
+.container2 .card:hover .face.face2 .img2{
+ width: 86px;
+ height: 86px;
+}
+
+.container2 .card:hover .face.face2 .h2de3{
+ color: #fff;
+ font-size: 2em;
+}
+
+.h2de3{
+	font-size: 1.5em;
+}
+
+.pnd{
+	font-size: inherit;
+}
+
+	/* certicaciones */
+
+.certifi-cont
+{
+ justify-content: center;
+ position: relative;
+ /* width: 1100px; */
+ display: flex;
+ flex-wrap: wrap;
+}
+
+.certifi-cont .box-cont
+{
+ /* margin: ARRIBA DERECHA ABAJO IZQUIERDA; */
+ margin: 6px;
+ position: relative;
+ width: 275px;
+ height: 275px;
+ overflow: hidden;
+ transition: 0.5s;
+}
+
+.certifi-cont .box-cont:hover
+{
+ z-index: 1;
+ transform: scale(1.25);
+ box-shadow: 0 25px 40px rgba(0, 0, 0, .5);
+}
+
+/* EFECTO QUE ESTABA BUSCANDO DEL HOVER  */
+
+.certifi-cont .box-cont .imgBx
+{
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+}
+
+.certifi-cont .box-cont .imgBx::before
+{
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index: 1;
+ background: linear-gradient(180deg,#f00,#000);
+ mix-blend-mode: multiply;
+ opacity: 0;
+ transition: 0.5s;
+}
+
+.certifi-cont .box-cont:hover .imgBx::before
+{
+ opacity: 1;
+}
+
+.certifi-cont .box-cont .imgBx img
+{
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+}
+
+.certifi-cont .box-cont .contenido
+{
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index: 1;
+ display: flex;
+ padding: 20px;
+ align-items: flex-end;
+}
+
+.certifi-cont .box-cont .contenido h2
+{
+ color: #fff;
+ transition: 0.5s;
+ text-transform: uppercase;
+ margin-bottom: 20px;
+ font-size: 20px;
+ transform: translateY(200px);
+}
+
+.certifi-cont .box-cont:hover .contenido h2
+{
+ transform: translateY(0);
+ transition-delay: 0.6s;
+}
+
+.certifi-cont .box-cont .contenido p
+{
+ color: #fff;
+ transform: translateY(200px);
+ transition: 0.5s;
+ font-size: 14px;
+}
+
+.certifi-cont .box-cont:hover .contenido p
+{
+ transform: translateY(0);
+ transition-delay: 0.7s;
+}
